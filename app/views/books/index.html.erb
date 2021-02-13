@@ -1,1 +1,18 @@
-<h1>投稿（他人）一覧</h1>
+<h1>Users</h1>
+
+<thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+  
+<% @books.each do |book| %>
+<div>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+  <p><%= book.user.name %></p>
+</div>
+
+<%= link_to "Show", book_path(book.id) %>
+<% end %>
