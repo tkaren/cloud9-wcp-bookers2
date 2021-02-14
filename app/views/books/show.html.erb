@@ -1,10 +1,13 @@
 <p>Book detail</p>
 <div class="book-body">
   <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <p><%= @book.user.name %></p>
+  <%= link_to user_path(@user.id) do %>
+  <p><%= @user.name %></p>
+  <% end %>
   <p><%= @book.title %></p>
   <p><%= @book.body %></p>
   <% if @book.user == current_user %>
-    <%= link_to "Destroy", book_path(@book), method: :delete %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか?" %>
   <% end %>
 </div>
