@@ -37,6 +37,8 @@
         <%= link_to "login", new_user_session_path %>
       </li>
     <% end %>
+
+    <%= flash[:notice] %>
     <%= yield %>
   </body>
 </html>
