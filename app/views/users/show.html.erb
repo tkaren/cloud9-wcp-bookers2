@@ -1,21 +1,3 @@
-<div class="profile-container">
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <h3 class="profile-name"><%= @user.name %></h3>
-  <h3 class="profile-introduction"><%= @user.introduction %></>
-  <% if @user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-  <% end %>
-</div>
-
-
-<h2>New book</h2>
-<%= form_with model:@book, local: true do |f| %>
-  <h4>Titel</h4>
-  <%= f.text_field :title %>
-  <h4>Body</h4>
-  <%= f.text_area :body %>
-  <%= f.submit 'Create Book' %>
-<% end %>
 
 <p>Books</p>
   <% @user.books.each do |book| %>
@@ -25,3 +7,5 @@
   <% end %>
   <p><%= book.body %></p>
   <% end %>
+  
+  <%= render 'books/form', book: @book ,user: @user %>
