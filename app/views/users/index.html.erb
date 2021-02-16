@@ -1,21 +1,22 @@
+<div class="container">
+  <div class="row">
+   <div class="col-lg-4"><%= render 'books/form', book: @book ,user: @user %></div>
+
+<div class="col-lg-8">
 <h1>Users</h1>
-
-<thead>
+<table class="table">
+    <thead>
+      <tr><th>image</th><th>name</th><th></th></tr>
+    </thead>
+      <% @users.each do |user| %>
     <tr>
-      <th>image</th>
-      <th>name</th>
-      <th colspan="1"></th>
+      <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to "Show", user_path(user.id) %></td>
+    <% end %>
     </tr>
-  </thead>
-
-<% @users.each do |user| %>
-<div>
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-  <p><%= user.name %></p>
+</table>
 </div>
 
-<%= link_to "Show", user_path(user.id) %>
-<% end %>
-
-
-<%= render 'books/form', book: @book ,user: @user %>
+</div>
+</div>

@@ -16,3 +16,22 @@
  @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+*{
+    box-sizing: 0;
+}
+
+.b {
+    font-size: 20px;
+}
+
+.box {
+    padding: 80px;
+}
+
+.box2 {
+    width: 600px;
+    height: 90px;
+    margin: 0 auto;
+}
+
