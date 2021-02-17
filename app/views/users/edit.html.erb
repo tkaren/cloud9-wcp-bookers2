@@ -11,7 +11,7 @@
 
 <div class="container">
   <div class="row">
-  <div class="col-sm-12 col-md-8 col-lg- px-5 px-sm-0 mx-auto">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
     <h2>User info</h2>
       <%= form_with model:@user, local:true do |f| %>
       <div class="form group">
@@ -26,10 +26,9 @@
       <label for="inputIntroduction">Introduction</label>
       <%= f.text_field :introduction, autofocus: true, id:"inputIntroduction" %>
       </div>
-      <%= f.submit "Update User", class: 'col-xs-12 btn btn-primary' %>
+      <%= f.submit "Update User", class: 'col-xs-12 btn btn-secondary' %>
 <% end %>
   </div>
   </div>
 </div>
 
-  

@@ -21,17 +21,32 @@
     box-sizing: 0;
 }
 
-.b {
-    font-size: 20px;
+
+// .box {
+//     padding: 80px;
+// }
+
+// .box2 {
+//     width: 600px;
+//     height: 90px;
+//     margin: 0 auto;
+// }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: 15px;
 }
 
-.box {
-    padding: 80px;
+.nav-item{
+    color: white;
 }
 
-.box2 {
-    width: 600px;
-    height: 90px;
-    margin: 0 auto;
+li {
+    text-align: none;
 }
 
+.navbar-nav {
+    outline: none;
+}
